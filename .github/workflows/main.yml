@@ -43,12 +43,12 @@ jobs:
           name: playwright-report-fail-${{ github.ref_name }}-${{ steps.date.outputs.formattedDate }} 
           path: playwright-report/
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          keep_files: false  # Preserve other files in gh-pages
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./docs
+      #     keep_files: false  # Preserve other files in gh-pages
 
       - name: Cache Node modules
         uses: actions/cache@v3
