@@ -40,7 +40,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report-fail-${{ github.ref_name }-${{ steps.date.outputs.formattedDate }}} 
+          name: playwright-report-fail-${{ github.ref_name }}-${{ steps.date.outputs.formattedDate }} 
           path: playwright-report/
 
       - name: Deploy to GitHub Pages
