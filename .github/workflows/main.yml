@@ -29,10 +29,18 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
 
-      - name: Upload HTML report
+      - name: Upload HTML report (Pass)
+        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-report-pass
+          path: playwright-report/
+
+      - name: Upload HTML report (Fail)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-fail
           path: playwright-report/
 
       - name: Cache Node modules
