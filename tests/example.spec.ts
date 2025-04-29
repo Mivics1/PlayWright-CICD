@@ -6,7 +6,7 @@ test('has title', async ({ page }) => {
 });
 
 test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto('https://playwright.com/');
   await page.getByRole('link', { name: 'Get started' }).click();
   await expect(page).toHaveURL(/.*intro/);
 });
