@@ -44,11 +44,11 @@ jobs:
           path: playwright-report/
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
+          keep_files: true  # Preserve other files in gh-pages
 
       - name: Cache Node modules
         uses: actions/cache@v3
