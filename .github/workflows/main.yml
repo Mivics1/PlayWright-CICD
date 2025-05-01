@@ -22,7 +22,7 @@ jobs:
 
       - name: Set current datetime
         id: datetime
-        run: echo "DATETIME=$(date +'%Y-%m-%d-%H:%M')" >> $GITHUB_ENV
+        run: echo "DATETIME=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: npm ci
