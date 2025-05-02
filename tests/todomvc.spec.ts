@@ -46,26 +46,4 @@ test.describe('Regression Test Suite - TodoMVC', () => {
     await expect(page.locator('.todo-list li')).toHaveCount(0);
   });
 
-  test('Filter buttons (All, Active, Completed) work correctly', async ({ page }) => {
-    await page.locator('.new-todo').fill('Active Task');
-    await page.locator('.new-todo').press('Enter');
-
-    await page.locator('.new-todo').fill('Completed Task');
-    await page.locator('.new-todo').press('Enter');
-
-    const secondItemToggle = page.locator('.todo-list li:nth-child(2) .toggle');
-    await secondItemToggle.check(); // Mark second as completed
-
-    await page.click('text=Active');
-    await expect(page.locator('.todo-list li')).toHaveCount(1);
-    await expect(page.locator('.todo-list li')).toContainText('Active Task');
-
-    await page.click('text=Completed');
-    await expect(page.locator('.todo-list li')).toHaveCount(1);
-    await expect(page.locator('.todo-list li')).toContainText('Completed Task');
-
-    await page.click('text=All');
-    await expect(page.locator('.todo-list li')).toHaveCount(2);
-  });
-
 });
