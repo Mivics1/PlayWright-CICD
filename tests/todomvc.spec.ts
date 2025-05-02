@@ -8,7 +8,7 @@ test.describe('Regression Test Suite - TodoMVC', () => {
 
   test('Homepage loads with correct title and input field', async ({ page }) => {
     await expect(page).toHaveTitle(/TodoMVC/);
-    await expect(page.locator('h1')).toHaveText('todoss');
+    await expect(page.locator('h1')).toHaveText('todos');
     await expect(page.locator('.new-todo')).toBeVisible();
   });
 
